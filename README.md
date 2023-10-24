@@ -1,4 +1,4 @@
-# G***NroGrupo8***_***MenendezTuja******AguilarIuzchuk***
+# G***Nro8***_***MenendezTuja******AguilarIuzchuk***
   "Breve descripción del trabajo"
 
 ## Integrantes
