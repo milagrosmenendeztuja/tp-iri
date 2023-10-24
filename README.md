@@ -1,9 +1,9 @@
-# G***NroGrupo***_***Apellido1******Apellido2***
+# G***NroGrupo8***_***MenendezTuja******AguilarIuzchuk***
   "Breve descripción del trabajo"
 
 ## Integrantes
-- Alumno 1
-- Alumno 2
+- Aguilar Iuzchuk, Juliana.
+- Menedez Tuja, Milagros.
 
 ## Objetivo del proyecto
 "Descripción del problema y el objetivo del desarrollo del proyecto"
