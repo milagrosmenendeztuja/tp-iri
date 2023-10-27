@@ -1,31 +1,23 @@
 #include "musculito.h"
 
-bool hayEspacio(sMusculito * gymMusculito)
+sCliente BuscarCliente(sCliente *misClientes, sCliente ClienteBuscado)
 {
-    return (gymMusculito -> CantMaxima - gymMusculito -> CantClientes > 0);
-}
-
-sCliente BuscarCliente(sMusculito *gymMusculito, sCliente ClienteBuscado)
-{
-    sCliente *auxiliar = gymMusculito->misClientes;
-    sCliente *ultimo = (gymMusculito->misClientes) + gymMusculito->CantClientes;
-
-    while(true)
-    {	if (((auxiliar->nombre == ClienteBuscado.nombre) &&  (auxiliar->apellido==ClienteBuscado.apellido)) || (auxiliar->email == ClienteBuscado.email))
+    for(int i=0; i< sizeof(misClientes);i++){
+        if (((misClientes[i].nombre == ClienteBuscado.nombre) &&  (misClientes[i].apellido==ClienteBuscado.apellido)) || (misClientes[i].email == ClienteBuscado.email))
         {
-            return *auxiliar;
+            int poscliente = i;
+            return misClientes[poscliente];
         }
-        if (auxiliar == ultimo)
+        if (i==sizeof(misClientes))
             break;
 
-        auxiliar++;
-    }
-    return ClienteNulo;
+        return ClienteNulo;
+        }
 }
 
-eRmCliente removerCliente (sMusculito * gymMusculito, sCliente ClienteEliminado)
+eRmCliente removerCliente (sCliente *misClientes, sCliente ClienteEliminado)
 {
-    sCliente *auxiliar = gymMusculito ->misClientes;
+    sCliente *auxiliar = *sCliente;
     sCliente *ultimo = (gymMusculito -> misClientes) + gymMusculito -> CantClientes - 1;
     while(true)
     {
@@ -52,4 +44,14 @@ eAgrCliente agregarCliente (sMusculito *gymMusculito, sCliente ClienteNuevo)
     ClienteNuevo = gymMusculito->misClientes [gymMusculito->CantClientes-1];
 
     return eAgrCliente ::ExitoAgrCliente;
+}
+
+int cantClientes (sCliente *misClientes)
+{
+
+}
+
+eEstado estadoCuota (sCliente *misClientes, sCliente ClienteBuscado)
+{
+
 }

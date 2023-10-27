@@ -3,14 +3,12 @@
 
 #include "encabezados.h"
 
+
 struct clases
 {
-    gClases datosClase;
-    int CuposMax;
-    char sala[10];
-    int CuposActuales;
-    //un array con los inscriptos en la clase
-
+    int idClase;
+    str nombre;
+    float horario;
 };
 typedef struct clases sClases;
 

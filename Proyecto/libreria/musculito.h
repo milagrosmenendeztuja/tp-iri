@@ -13,25 +13,32 @@ typedef agrCliente eAgrCliente;
 enum rmCliente   { ErrRmNomApe = -1,   ExitoRemover = 1 };
 typedef rmCliente eRmCliente;
 
-enum estado {Deuda = -1};
-typedef estado estadoCuota;
+enum estado {Deuda = -1, alDia = 0 , aFavor = 1};
+typedef estado eEstado;
 
-struct musculito
+typedef struct
 {
- sCliente *misClientes;  //personas en el sistema
- sMusculacion *Modulos;
- sClases *Clases;
- u_int CantMaxima = 1950; //maximo de clientes (1935)
- u_int CantClientes; //contador de clientes al dia de la fecha
-}; typedef struct musculito sMusculito;
+    u_int idCurso;
+    time_t fechaInscripcion;
+} sInscripcion;
+
+typedef struct
+{
+    u_int idCliente, cantInscriptos;
+    sInscripcion* CursosInscriptos;
+} sAsistencia;
 
 /*OTRAS FUNCIONES*/
-bool hayEspacio(sMusculito* misClientes);
+
 
 /*FUNCIONES DE CLIENTES*/
-sCliente BuscarCliente(sMusculito *gymMusculito, sCliente ClienteBuscado);
-eAgrCliente agregarCliente (sMusculito *gymMusculito, sCliente ClienteNuevo);
-eRmCliente removerCliente (sMusculito * gymMusculito, sCliente ClienteEliminado);
+sCliente BuscarCliente(sCliente *misClientes, sCliente ClienteBuscado);
+eAgrCliente agregarCliente (sCliente *misClientes, sCliente ClienteNuevo);
+eRmCliente removerCliente (sCliente *misClientes, sCliente ClienteEliminado);
+eEstado estadoCuota (sCliente *misClientes, sCliente ClienteBuscado);
+int cantClientes (sCliente *misClientes);
+
+
 
 
 
