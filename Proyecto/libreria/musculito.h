@@ -5,7 +5,7 @@
 #include "clases.h"
 #include "musculacion.h"
 
-const sCliente ClienteNulo = { 0 , " ", " ", " ", 0 , {0,0,0}, " "};
+const sCliente ClienteNulo = { 0 , " ", " ", " ", " ", {0,0,0}, 0};
 
 enum agrCliente {ErrAgrCliente = -1, ExitoAgrCliente = 1};
 typedef agrCliente eAgrCliente;

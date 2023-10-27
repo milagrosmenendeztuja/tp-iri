@@ -1,19 +1,20 @@
 #include "archivos.h"
-#include <fstream>
-#include <iostream>
-using namespace std;
 
-eCodArchivos leerArchivoClientes (std::fstream *infileclientes)
+eCodArchivos leerArchivoClientes (ifstream *infileclientes)
 {
     str header;
-    getline(infileclientes,header);
-    while(infileclientes.good()){
+
+    getline(*infileclientes, header);
+
+    while(infileclientes->good()){
         str line;
-        getline (infileclientes,line);
+        getline (*infileclientes,line);
 
         char delimiter= ',';
         str field;
-        istringstream iss(line);
+
+        stringstream iss;
+        iss<<line;
 
         while (getline (iss, field, delimiter))
         {
@@ -21,7 +22,8 @@ eCodArchivos leerArchivoClientes (std::fstream *infileclientes)
         }
         cout << endl;
     }
-    /* int N=1;
+}
+    // int N=1;
    /* sCliente *auxiliar= new sCliente[N];
     //sCliente auxiliar[N];
     sCliente basura;
@@ -84,3 +86,4 @@ eCodArchivos leerArchivoAsistencias (std::fstream*infileasistencias, sAsistencia
 {
 
 }
+*/

@@ -5,25 +5,25 @@ using namespace std;
 
 int main()
 {
-    instream infileclientes;
-       infileclientes.open("../DataSet TP/iriclientesGYM.csv");
+    ifstream infileclientes;
+    infileclientes.open("..\\..\\Proyecto\\Dataset TP\\iriClientesGYM.csv");
     if (!infileclientes.is_open())
     {
-        cout << "Error al abrir el archivo CSV" << endl;
+        cout << "1 Error al abrir el archivo CSV" << endl;
         return 1;
     }
 
-    ifstream infileclases("iriclasesGYM.csv");
+    ifstream infileclases("..\\..\\Proyecto\\Dataset TP\\iriClasesGYM.csv");
     if (!infileclases.is_open())
     {
-        cout << "Error al abrir el archivo CSV" << endl;
+        cout << "2 Error al abrir el archivo CSV" << endl;
         return 1;
     }
 
-    ifstream infileasistencias("asistencias_1697673600000.dat");
+    ifstream infileasistencias("..\\..\\Proyecto\\Dataset TP\\asistencias_1697673600000.dat");
     if (!infileasistencias.is_open())
     {
-        cout << "Error al abrir el archivo CSV" << endl;
+        cout << "3 Error al abrir el archivo CSV" << endl;
         return 1;
     }
 

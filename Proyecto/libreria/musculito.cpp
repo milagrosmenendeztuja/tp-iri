@@ -15,9 +15,9 @@ sCliente BuscarCliente(sCliente *misClientes, sCliente ClienteBuscado)
         }
 }
 
-eRmCliente removerCliente (sCliente *misClientes, sCliente ClienteEliminado)
+/*eRmCliente removerCliente (sCliente *misClientes, sCliente ClienteEliminado)
 {
-    sCliente *auxiliar = *sCliente;
+    sCliente *auxiliar = misClientes;
     sCliente *ultimo = (gymMusculito -> misClientes) + gymMusculito -> CantClientes - 1;
     while(true)
     {
@@ -33,9 +33,9 @@ eRmCliente removerCliente (sCliente *misClientes, sCliente ClienteEliminado)
         auxiliar++;
     }
     return eRmCliente::ErrRmNomApe;
-}
+}*/
 
-eAgrCliente agregarCliente (sMusculito *gymMusculito, sCliente ClienteNuevo)
+/*eAgrCliente agregarCliente (sMusculito *gymMusculito, sCliente ClienteNuevo)
 {
     if(!hayEspacio (gymMusculito))
         return eAgrCliente::ErrAgrCliente;
@@ -44,7 +44,7 @@ eAgrCliente agregarCliente (sMusculito *gymMusculito, sCliente ClienteNuevo)
     ClienteNuevo = gymMusculito->misClientes [gymMusculito->CantClientes-1];
 
     return eAgrCliente ::ExitoAgrCliente;
-}
+}*/
 
 int cantClientes (sCliente *misClientes)
 {
