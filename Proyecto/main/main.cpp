@@ -10,7 +10,7 @@ int main()
     if (!infileclientes.is_open())
     {
         cout << "1 Error al abrir el archivo CSV" << endl;
-        return 1;
+
     }
 
     ifstream infileclases("..\\..\\Proyecto\\Dataset TP\\iriClasesGYM.csv");

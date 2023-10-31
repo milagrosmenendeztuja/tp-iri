@@ -1,19 +1,81 @@
 #include "musculito.h"
 
-sCliente BuscarCliente(sCliente *misClientes, sCliente ClienteBuscado)
+eBusCliente BuscarCliente(sCliente *misClientes, sCliente ClienteBuscado)
 {
     for(int i=0; i< sizeof(misClientes);i++){
         if (((misClientes[i].nombre == ClienteBuscado.nombre) &&  (misClientes[i].apellido==ClienteBuscado.apellido)) || (misClientes[i].email == ClienteBuscado.email))
         {
-            int poscliente = i;
-            return misClientes[poscliente];
+            return eBusCliente::ExisteCliente;
         }
         if (i==sizeof(misClientes))
             break;
 
-        return ClienteNulo;
+        return eBusCliente::NoExisteCliente;
         }
 }
+
+int idCliente(sCliente *misClientes, sCliente ClienteBuscado)
+{
+        int BusquedaCliente = BuscarCliente(misClientes, ClienteBuscado);
+        if (BusquedaCliente == ExisteCliente)
+        {
+            for(int i=0; i< sizeof(misClientes);i++)
+            {
+                if (((misClientes[i].nombre == ClienteBuscado.nombre) &&  (misClientes[i].apellido==ClienteBuscado.apellido)) || (misClientes[i].email == ClienteBuscado.email))
+            {
+                return misClientes[i].idCliente;
+            }
+            }
+        }
+        if (BusquedaCliente == NoExisteCliente)
+        {
+            return 0;
+        }
+}
+
+//enum agrCliente {ErrAgrCliente = -1, ExitoAgrCliente = 1};
+//typedef agrCliente eAgrCliente;
+
+/*eAgrCliente inscribirCliente (sCliente*misClientes, sCliente ClienteNuevo)
+{
+        ClienteNuevo = misClientes [sizeof(misclientes)+1];
+        returno eAgrCliente::ExitoAgrCliente;
+
+}*/
+
+eEstado estadoCuota (sCliente *misClientes, int IdClienteBuscado)
+{
+        int posicion;
+
+        for(int i=0; i< sizeof(misClientes);i++)
+        {
+            if(misClientes[i].idCliente == IdClienteBuscado)
+            {
+             posicion=i;
+            }
+        }
+     if(misClientes[posicion].estado == 0)
+        {
+            return eEstado::alDia;
+        }
+     if(misClientes[posicion].estado < 0)
+     {
+            return eEstado::Deuda;
+     }
+     if(misClientes[posicion].estado > 0)
+     {
+            return eEstado::aFavor;
+     }
+}
+
+
+
+
+
+
+
+
+
 
 /*eRmCliente removerCliente (sCliente *misClientes, sCliente ClienteEliminado)
 {
@@ -45,7 +107,7 @@ sCliente BuscarCliente(sCliente *misClientes, sCliente ClienteBuscado)
 
     return eAgrCliente ::ExitoAgrCliente;
 }*/
-
+/*
 int cantClientes (sCliente *misClientes)
 {
 
@@ -55,3 +117,4 @@ eEstado estadoCuota (sCliente *misClientes, sCliente ClienteBuscado)
 {
 
 }
+*/

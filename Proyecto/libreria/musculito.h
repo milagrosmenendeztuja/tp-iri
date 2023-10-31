@@ -7,6 +7,9 @@
 
 const sCliente ClienteNulo = { 0 , " ", " ", " ", " ", {0,0,0}, 0};
 
+enum busCliente {ExisteCliente =1, NoExisteCliente =-1};
+typedef busCliente eBusCliente;
+
 enum agrCliente {ErrAgrCliente = -1, ExitoAgrCliente = 1};
 typedef agrCliente eAgrCliente;
 
@@ -32,12 +35,14 @@ typedef struct
 
 
 /*FUNCIONES DE CLIENTES*/
-sCliente BuscarCliente(sCliente *misClientes, sCliente ClienteBuscado);
-eAgrCliente agregarCliente (sCliente *misClientes, sCliente ClienteNuevo);
+eBusCliente BuscarCliente(sCliente *misClientes, sCliente ClienteBuscado);
+/*eAgrCliente agregarCliente (sCliente *misClientes, sCliente ClienteNuevo);
 eRmCliente removerCliente (sCliente *misClientes, sCliente ClienteEliminado);
 eEstado estadoCuota (sCliente *misClientes, sCliente ClienteBuscado);
-int cantClientes (sCliente *misClientes);
-
+int cantClientes (sCliente *misClientes); */
+int idCliente(sCliente *misClientes, sCliente ClienteBuscado);
+eAgrCliente inscribirCliente (sCliente*misClientes, sCliente ClienteNuevo);
+eEstado estadoCuota (sCliente *misClientes, sCliente ClienteBuscado);
 
 
 
