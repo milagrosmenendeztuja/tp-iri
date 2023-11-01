@@ -68,6 +68,24 @@ eEstado estadoCuota (sCliente *misClientes, int IdClienteBuscado)
      }
 }
 
+float verificarClase (sClases *misClases, sClases ClaseBuscada)
+{
+     int posicion;
+     for(int i=0; i<sizeof(misClases); i++)
+     {
+            if(misClases[i].nombre == ClaseBuscada.nombre && misClases[i].horario == ClaseBuscada.horario)
+            {
+             posicion = i;
+             return misClases[posicion].idClase;
+            }
+     }
+     return -1;
+}
+
+
+
+
+
 
 
 
