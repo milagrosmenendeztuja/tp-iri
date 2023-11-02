@@ -1,6 +1,6 @@
 #include "archivos.h"
 
-eCodArchivos leerArchivoClientes (ifstream *infileclientes)
+void leerArchivoClientes (ifstream *infileclientes)
 {
     str header;
 
@@ -25,7 +25,7 @@ eCodArchivos leerArchivoClientes (ifstream *infileclientes)
 
 }
 
-eCodArchivos leerArchivoClases (ifstream *infileclases)
+void leerArchivoClases (ifstream *infileclases)
 {
     str header;
 
@@ -49,7 +49,7 @@ eCodArchivos leerArchivoClases (ifstream *infileclases)
     }
 }
 
-eCodArchivos leerArchivoAsistencias (ifstream *infileasistencias)
+void leerArchivoAsistencias (ifstream *infileasistencias)
 {
     str header;
 
@@ -72,5 +72,19 @@ eCodArchivos leerArchivoAsistencias (ifstream *infileasistencias)
         cout << endl;
     }
 }
+
+void resizeclientes(sCliente** misClientes, u_int *tam)
+{
+    (*tam) = *(tam)+1;  //incremento el contador de tamaño
+    sCliente*aux = new sCliente[*(tam)]; // creo un auxiliar memoria dinamica
+
+    for(u_int i=0; i< (*tam)-1; i++)
+    {
+        aux[i] = (*misClientes)[i]; //copio todas las cosas del array al nuevo array auxiliar
+    }
+    delete[]*misClientes; //borro el array
+    *misClientes = aux; //asigno la nueva direccion al nuevo array
+}
+
 
 

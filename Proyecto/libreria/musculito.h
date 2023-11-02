@@ -19,6 +19,8 @@ typedef rmCliente eRmCliente;
 enum estado {Deuda = -1, alDia = 0 , aFavor = 1};
 typedef estado eEstado;
 
+enum Superposicion {};
+
 
 typedef struct
 {
