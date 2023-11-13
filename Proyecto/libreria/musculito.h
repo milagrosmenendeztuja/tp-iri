@@ -13,9 +13,6 @@ typedef busCliente eBusCliente;
 enum agrCliente {ErrAgrCliente = -1, ExitoAgrCliente = 1};
 typedef agrCliente eAgrCliente;
 
-enum rmCliente { ErrRmNomApe = -1,   ExitoRemover = 1 };
-typedef rmCliente eRmCliente;
-
 enum estado {Deuda = -1, alDia = 0 , aFavor = 1};
 typedef estado eEstado;
 

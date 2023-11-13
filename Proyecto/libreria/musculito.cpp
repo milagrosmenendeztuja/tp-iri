@@ -87,10 +87,7 @@ eCupos verificarCupos()
 
 }
 
-eRmCliente removerCliente()
-{
 
-}
 
 
 
