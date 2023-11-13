@@ -1,6 +1,6 @@
 #include "archivos.h"
 
-void leerArchivoClientes (ifstream *infileclientes)
+void leerArchivoClientes (ifstream&infileclientes)
 {
     str header;
 
