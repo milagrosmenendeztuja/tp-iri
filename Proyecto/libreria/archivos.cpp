@@ -4,11 +4,11 @@ void leerArchivoClientes (ifstream&infileclientes)
 {
     str header;
 
-    getline(*infileclientes, header);
+    getline(infileclientes, header);
 
-    while(infileclientes->good()){
+    while(infileclientes.good()){
         str line;
-        getline (*infileclientes,line);
+        getline (infileclientes,line);
 
         char delimiter= ',';
         str field;
