@@ -169,10 +169,45 @@ eCupos verificarCupos()
 
 }
 
-/*eTipoClase nombreClase(sClases *misClases, sClase )
+eTipoClase nombreClase(std:: fstream& infileclases, int CupoMax)
 {
 
-}*/
+        /*if (infileclases.nombre == "Spinning")
+        {
+            CupoMax = 45;
+            return eTipoClase::Spinning;
+        }
+        if (infileclases.nombre == "Yoga")
+        {
+            CupoMax = 25;
+            return eTipoClase::Yoga;
+        }
+        if (infileclases.nombre == "Pilates")
+        {
+            CupoMax = 15;
+            return eTipoClase::Pilates;
+        }
+        if (infileclases.nombre == "Stretching")
+        {
+            CupoMax = 40;
+            return eTipoClase::Stretching;
+        }
+        if (infileclases.nombre == "Zumba")
+        {
+            CupoMax = 50;
+            return eTipoClase::Zumba;
+        }
+        if (infileclases.nombre == "Boxeo")
+        {
+            CupoMax = 30;
+            return eTipoClase::Boxeo;
+        }
+        if (infileclases.nombre == "Musculacion")
+        {
+            CupoMax = 30;
+            return eTipoClase::Musculacion;
+        } */
+}
 
 
 
