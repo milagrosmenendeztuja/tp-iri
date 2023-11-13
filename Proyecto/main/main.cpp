@@ -5,6 +5,8 @@
 
 using namespace std;
 
+
+
 int main()
 {
     ifstream infileclientes;
@@ -34,4 +36,5 @@ int main()
     }
 
     //leerArchivoAsistencias(&infileasistencias);
+
 }

@@ -3,14 +3,6 @@
 
 #include "encabezados.h"
 
-struct fecha
-{
-    int dia;
-    int mes;
-    int anio;
-};
-typedef struct fecha sFecha;
-
 struct clientes
 {
     int idCliente;		 //código único de cada cliente
@@ -18,7 +10,7 @@ struct clientes
     str apellido;
     str email;
     str telefono;   //telefono
-    sFecha fechaNac;
+    str fechaNac;
     int estado;
 
     // inscripcion* CursosInscriptos;

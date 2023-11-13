@@ -22,6 +22,9 @@ typedef Superposicion eSuperposicion;
 enum Cupos {HayCupos = 1, NoHayCupos = -1};
 typedef Cupos eCupos;
 
+enum tipoClase {Spinning = 1, Yoga, Pilates, Stretching, Zumba, Boxeo};
+typedef tipoClase eTipoClase;
+
 
 typedef struct
 {
@@ -39,14 +42,15 @@ typedef struct
 
 
 /*FUNCIONES DE CLIENTES*/
-eBusCliente BuscarCliente(sCliente *misClientes, sCliente ClienteBuscado);
+eBusCliente BuscarCliente (std:: fstream& infileclientes, const sCliente ClienteBuscado);
+int idCliente(std:: fstream& infileclientes, const sCliente ClienteBuscado);
 /*eAgrCliente agregarCliente (sCliente *misClientes, sCliente ClienteNuevo);
 eRmCliente removerCliente (sCliente *misClientes, sCliente ClienteEliminado);
 */
 int idCliente(sCliente *misClientes, sCliente ClienteBuscado);
 eAgrCliente inscribirCliente (sCliente*misClientes, sCliente ClienteNuevo);
 eEstado estadoCuota (sCliente *misClientes, sCliente ClienteBuscado);
-float verificarClase(sClases *misClases, sClases ClaseBuscada);
+float verificarClase(std::fstream &infileclases, const sClases ClaseBuscada);
 
 
 
