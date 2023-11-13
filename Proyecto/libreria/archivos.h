@@ -13,7 +13,7 @@ using namespace std;
 typedef enum codArchivos{ErrorApertura=-1, ErrorEscritura=0, ExitoOperacion=1} eCodArchivos;
 
 void leerArchivoClientes (ifstream &infileclientes);
-void leerArchivoClases (ifstream*infileclases);
+void leerArchivoClases (ifstream &infileclases);
 void leerArchivoAsistencias (ifstream*infileasistencias);
 int tamArrayClientes(sCliente*misClientes);
 void resizeclientes(sCliente **misClientes, u_int *tam);

@@ -1,6 +1,8 @@
 #include <fstream>
 #include <sstream>
 #include <iostream>
+#include "archivos.h"
+
 using namespace std;
 
 int main()
@@ -13,6 +15,8 @@ int main()
 
     }
 
+    //leerArchivoClientes(infileclientes);
+
     ifstream infileclases("..\\..\\Proyecto\\Dataset TP\\iriClasesGYM.csv");
     if (!infileclases.is_open())
     {
@@ -20,11 +24,14 @@ int main()
         return 1;
     }
 
-    ifstream infileasistencias("..\\..\\Proyecto\\Dataset TP\\asistencias_1697673600000.dat");
+    //leerArchivoClases(infileclases);
+
+    ifstream infileasistencias("..\\..\\Proyecto\\Dataset TP\\asistencias_1697673600000.dat", ios::binary);
     if (!infileasistencias.is_open())
     {
         cout << "3 Error al abrir el archivo CSV" << endl;
         return 1;
     }
 
+    //leerArchivoAsistencias(&infileasistencias);
 }

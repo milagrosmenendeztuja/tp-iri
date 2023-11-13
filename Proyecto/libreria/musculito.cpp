@@ -33,16 +33,6 @@ int idCliente(sCliente *misClientes, sCliente ClienteBuscado)
         }
 }
 
-//enum agrCliente {ErrAgrCliente = -1, ExitoAgrCliente = 1};
-//typedef agrCliente eAgrCliente;
-
-/*eAgrCliente inscribirCliente (sCliente*misClientes, sCliente ClienteNuevo)
-{
-        ClienteNuevo = misClientes [sizeof(misclientes)+1];
-        returno eAgrCliente::ExitoAgrCliente;
-
-}*/
-
 eEstado estadoCuota (sCliente *misClientes, int IdClienteBuscado)
 {
         int posicion;
@@ -81,6 +71,29 @@ float verificarClase (sClases *misClases, sClases ClaseBuscada)
      }
      return -1;
 }
+
+eAgrCliente agregarCliente ()
+{
+
+}
+
+eSuperposicion verificarSuperposicion()
+{
+
+}
+
+eCupos verificarCupos()
+{
+
+}
+
+eRmCliente removerCliente()
+{
+
+}
+
+
+
 
 
 
@@ -127,11 +140,6 @@ float verificarClase (sClases *misClases, sClases ClaseBuscada)
 }*/
 /*
 int cantClientes (sCliente *misClientes)
-{
-
-}
-
-eEstado estadoCuota (sCliente *misClientes, sCliente ClienteBuscado)
 {
 
 }

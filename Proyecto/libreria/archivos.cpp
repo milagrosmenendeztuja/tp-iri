@@ -25,15 +25,15 @@ void leerArchivoClientes (ifstream&infileclientes)
 
 }
 
-void leerArchivoClases (ifstream *infileclases)
+void leerArchivoClases (ifstream &infileclases)
 {
     str header;
 
-    getline(*infileclases, header);
+    getline(infileclases, header);
 
-    while(infileclases->good()){
+    while(infileclases.good()){
         str line;
-        getline (*infileclases,line);
+        getline (infileclases,line);
 
         char delimiter= ',';
         str field;
@@ -49,9 +49,9 @@ void leerArchivoClases (ifstream *infileclases)
     }
 }
 
-void leerArchivoAsistencias (ifstream *infileasistencias)
+void leerArchivoAsistencias (ifstream infileasistencias)
 {
-    str header;
+   /* str header;
 
     getline(*infileasistencias, header);
 
@@ -70,7 +70,26 @@ void leerArchivoAsistencias (ifstream *infileasistencias)
             cout << field << " ";
         }
         cout << endl;
+    } */
+
+    char buffer [1024];
+    while (infileasistencias.good())
+    {
+        infileasistencias.read (buffer, sizeof(buffer));
     }
+    infileasistencias.close ();
+
+    ofstream outfileasistencias ("asistencias_1697673600000.dat", ios::binary);
+    /*if (!outfileasistencias.is_open)
+    {
+        cout << "Error abriendo el archivo binario" << endl;
+        return;
+    }*/
+
+    char data[] = "Estas es la data binaria.";
+    outfileasistencias.write(data, sizeof (data));
+    outfileasistencias.close();
+    return ;
 }
 
 void resizeclientes(sCliente** misClientes, u_int *tam)
