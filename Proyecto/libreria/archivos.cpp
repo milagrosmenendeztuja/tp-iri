@@ -82,7 +82,7 @@ void leerArchivoClases (ifstream &infileclases)
         getline (ss, campo, ',');
         clase.idClase = stoi(campo);
         getline (ss, clase.nombre, ',');
-        getline (ss, convertirString(clase.horario), ',');
+        getline (ss, convertirString(clase.horario), ','); //loca
 
         sClases *tempArray = new sClases[numClases + 1];        // Aumenta el tamaño del array dinámico y agrega la clase
         std::copy(misClases, misClases + numClases, tempArray);
