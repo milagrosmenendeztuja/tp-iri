@@ -152,7 +152,7 @@ eEstado estadoCuota (std:: fstream& infileclientes, sCliente ClienteBuscado)
         } else {
             // Clase no encontrada
             return -1;
-        }
+        } //asad
 }*/
 
 int verificarClase(std::fstream& infileclases, const sClases& claseBuscada) {
