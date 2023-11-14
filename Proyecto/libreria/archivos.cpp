@@ -26,6 +26,26 @@ void leerArchivoClientes (ifstream&infileclientes)
 }
 */
 
+str convertirString(float horario){
+    int horas = static_cast <int>(horario);  //obtengo la parte entera
+    int minutos = static_cast <int>((horario-horas)*60); //obtengo los minutos
+
+    ostringstream ss; //creo un stringstream para formatear el horario
+
+    if (horas < 10) {   //agrego las horas a la cadena
+        ss << "0";      //agrego un cero si la hora es menor que 10
+    }
+    ss << ":";
+    if(minutos < 10){   //agrego los minutos a la cadena
+        ss <<"0";       // agrego cero si los minutos son menos que 10
+    }
+    ss << minutos;
+
+    return ss.str();
+}
+
+
+
 void leerArchivoClases (ifstream &infileclases)
 {
     //MANERA QUE NOS ENSEÑARON EN CLASES
@@ -62,7 +82,7 @@ void leerArchivoClases (ifstream &infileclases)
         getline (ss, campo, ',');
         clase.idClase = stoi(campo);
         getline (ss, clase.nombre, ',');
-        getline (ss, clase.horario, ',');
+        getline (ss, convertirString(clase.horario), ',');
 
         sClases *tempArray = new sClases[numClases + 1];        // Aumenta el tamaño del array dinámico y agrega la clase
         std::copy(misClases, misClases + numClases, tempArray);

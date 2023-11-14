@@ -18,4 +18,6 @@ void leerArchivoAsistencias (ifstream*infileasistencias);
 int tamArrayClientes(sCliente*misClientes);
 void resizeclientes(sCliente **misClientes, u_int *tam);
 
+str convertirString (float horario);
+
 #endif // ARCHIVOS_H
