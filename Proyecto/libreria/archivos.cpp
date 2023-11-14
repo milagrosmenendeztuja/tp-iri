@@ -1,8 +1,9 @@
 #include "archivos.h"
-
+/*
 void leerArchivoClientes (ifstream&infileclientes)
 {
-    str header;
+    //MANERA QUE NOS ENSEÑARON EN CLASES
+     str header;
 
     getline(infileclientes, header);
 
@@ -22,12 +23,13 @@ void leerArchivoClientes (ifstream&infileclientes)
         }
         cout << endl;
     }
-
 }
+*/
 
 void leerArchivoClases (ifstream &infileclases)
 {
-    str header;
+    //MANERA QUE NOS ENSEÑARON EN CLASES
+    /*str header;
 
     getline(infileclases, header);
 
@@ -46,7 +48,43 @@ void leerArchivoClases (ifstream &infileclases)
             cout << field << " ";
         }
         cout << endl;
+    }*/
+
+    sClases *misClases = nullptr; //creo array dinamico
+    int numClases = 0;
+
+    string linea;
+    while (getline(infileclases, linea)){    //lee el archivo CSV line ppor linea
+        std :: istringstream ss(linea);
+        string campo;
+
+        sClases clase;                           //Divide la linea en campos utilizando comas como delimitadores
+        getline (ss, campo, ',');
+        clase.idClase = stoi(campo);
+        getline (ss, clase.nombre, ',');
+        getline (ss, clase.horario, ',');
+
+        sClases *tempArray = new sClases[numClases + 1];        // Aumenta el tamaño del array dinámico y agrega la clase
+        std::copy(misClases, misClases + numClases, tempArray);
+        tempArray[numClases] = clase;
+
+        delete[] misClases;
+        misClases = tempArray;
+        ++numClases;
+
     }
+    infileclases.close();   // Cierra el archivo CSV
+
+    for (int i = 0; i < numClases; ++i) {              // Ahora puedes trabajar con el array dinámico, por ejemplo, imprimir los datos
+
+    cout << "ID: " << misClases[i].idClase << ", Nombre: " << misClases[i].nombre << ", Horario: " << misClases[i].horario << std::endl;
+    }
+
+    delete[] misClases;   // Recuerda liberar la memoria cuando ya no la necesitas
+
+    return;
+
+
 }
 
 void leerArchivoAsistencias (ifstream infileasistencias)

@@ -25,6 +25,9 @@ typedef Cupos eCupos;
 enum tipoClase {Spinning = 1, Yoga, Pilates, Stretching, Zumba, Boxeo, Musculacion};
 typedef tipoClase eTipoClase;
 
+enum verificarClase {ExisteClase = 1, NoExisteClase = -1};
+typedef verificarClase eVerificarClase;
+
 
 typedef struct
 {

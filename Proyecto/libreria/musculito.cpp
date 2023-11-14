@@ -123,9 +123,9 @@ eEstado estadoCuota (std:: fstream& infileclientes, sCliente ClienteBuscado)
         }
 }
 
-float verificarClase (std:: fstream& infileclases,const sClases ClaseBuscada)
+/*eVerificarClase verificarClase (std:: fstream& infileclases,const sClases ClaseBuscada)
 {
-     /*int posicion;
+     int posicion;
      for(int i=0; i<sizeof(infileclases); i++)
      {
             if(misClases[i].nombre == ClaseBuscada.nombre && infileclases[i].horario == ClaseBuscada.horario)
@@ -134,7 +134,7 @@ float verificarClase (std:: fstream& infileclases,const sClases ClaseBuscada)
              return misClases[posicion].idClase;
             }
      }
-     return -1; */
+     return -1;
 
         sClases claseActual;
         int posicion = -1;
@@ -152,9 +152,9 @@ float verificarClase (std:: fstream& infileclases,const sClases ClaseBuscada)
             // Clase no encontrada
             return -1;
         }
-}
+}*/
 
-eAgrCliente agregarCliente ()
+/* eAgrCliente agregarCliente ()
 {
 
 }
@@ -172,7 +172,7 @@ eCupos verificarCupos()
 eTipoClase nombreClase(std:: fstream& infileclases, int CupoMax)
 {
 
-        /*if (infileclases.nombre == "Spinning")
+        if (infileclases.nombre == "Spinning")
         {
             CupoMax = 45;
             return eTipoClase::Spinning;
@@ -206,9 +206,9 @@ eTipoClase nombreClase(std:: fstream& infileclases, int CupoMax)
         {
             CupoMax = 30;
             return eTipoClase::Musculacion;
-        } */
+        }
 }
-
+*/
 
 
 
