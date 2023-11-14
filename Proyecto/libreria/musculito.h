@@ -45,7 +45,9 @@ typedef struct
 
 /*FUNCIONES DE CLASES*/
 eTipoClase nombreClase(std:: fstream& infileclases);
-float verificarClase(std::fstream &infileclases, const sClases ClaseBuscada);
+int verificarClase(std::fstream& infileclases, const sClases& claseBuscada);
+int idClase(std::fstream& infileclases, const sClases& claseBuscada);
+const int NoExisteClase = -1;
 
 /*FUNCIONES DE CLIENTES*/
 eBusCliente BuscarCliente (std:: fstream& infileclientes, const sCliente ClienteBuscado);

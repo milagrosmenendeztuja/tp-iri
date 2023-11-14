@@ -1,4 +1,5 @@
 #include <fstream>
+#include <sstream>
 #include "musculito.h"
 
 eBusCliente BuscarCliente (std:: fstream& infileclientes, const sCliente ClienteBuscado )
@@ -153,6 +154,46 @@ eEstado estadoCuota (std:: fstream& infileclientes, sCliente ClienteBuscado)
             return -1;
         }
 }*/
+
+int verificarClase(std::fstream& infileclases, const sClases& claseBuscada) {
+        sClases claseActual;
+        int posicion = -1;
+
+        infileclases.clear();  // Reiniciar el estado del archivo
+        infileclases.seekg(0, std::ios::beg);  // Mover el puntero al principio del archivo
+
+        std::string line;
+        while (std::getline(infileclases, line)) {
+            std::istringstream iss(line);
+            if (iss >> claseActual.nombre >> claseActual.horario >> claseActual.idClase) {
+                if (claseActual.nombre == claseBuscada.nombre && claseActual.horario == claseBuscada.horario) {
+                    posicion = claseActual.idClase;
+                    break;  // No necesitas seguir leyendo el archivo si encontraste la clase
+                }
+            }
+        }
+
+        if (posicion != -1) {
+            return posicion;
+        } else {
+            // Clase no encontrada
+            return NoExisteClase;
+        }
+}
+
+int idClase(std::fstream& infileclases, const sClases& claseBuscada)
+{
+        int resultadoBusquedaClase = verificarClase(infileclases, claseBuscada);
+
+        if (resultadoBusquedaClase != NoExisteClase)
+        {
+            return resultadoBusquedaClase;
+        } else
+        {
+            return 0;
+        }
+}
+
 
 /* eAgrCliente agregarCliente ()
 {
