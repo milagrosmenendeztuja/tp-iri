@@ -72,6 +72,8 @@ void leerArchivoClases (ifstream &infileclases)
 
     sClases *misClases = nullptr; //creo array dinamico
     int numClases = 0;
+    int i=0;
+    string n;
 
     string linea;
     while (getline(infileclases, linea)){    //lee el archivo CSV line ppor linea
@@ -82,7 +84,9 @@ void leerArchivoClases (ifstream &infileclases)
         getline (ss, campo, ',');
         clase.idClase = stoi(campo);
         getline (ss, clase.nombre, ',');
-        getline (ss, convertirString(clase.horario), ','); //loca
+        getline (ss, n, ',');
+        clase.horario[i] = stof(n);
+
 
         sClases *tempArray = new sClases[numClases + 1];        // Aumenta el tamaño del array dinámico y agrega la clase
         std::copy(misClases, misClases + numClases, tempArray);
@@ -97,7 +101,7 @@ void leerArchivoClases (ifstream &infileclases)
 
     for (int i = 0; i < numClases; ++i) {              // Ahora puedes trabajar con el array dinámico, por ejemplo, imprimir los datos
 
-    cout << "ID: " << misClases[i].idClase << ", Nombre: " << misClases[i].nombre << ", Horario: " << misClases[i].horario << std::endl;
+        cout << "ID: " << misClases[i].idClase << ", Nombre: " << misClases[i].nombre << ", Horario: " << misClases[i].horario << std::endl;
     }
 
     delete[] misClases;   // Recuerda liberar la memoria cuando ya no la necesitas
